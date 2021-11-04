@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "code": 200,
+    "requestId": "617beac3910d9c69942ece91"
+  },
+  "notifications": [
+    {
+      "type": "notificationTray",
+      "item": {
+        "unreadCount": 0
+      }
+    }
+  ]
+}
