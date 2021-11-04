@@ -63,8 +63,15 @@ class ForecastViewController: UIViewController {
         super.viewDidLoad()
         
         setupCollectionView()
+        setupSearchBar()
         
         viewModel.view = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        searchBar?.becomeFirstResponder()
     }
 }
 
@@ -81,7 +88,15 @@ extension ForecastViewController {
         collectionView?.accessibilityIdentifier = "collectionView"
     }
     
+    private func setupSearchBar() {
+        searchBar?.barTintColor = .white
+        searchBar?.searchTextField.leftView?.tintColor = .lightGray
+        searchBar?.searchTextField.backgroundColor = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.00)
+        searchBar?.searchTextField.textColor = .tertiarySystemBackground
+    }
+    
     @IBAction func loadData() {
+        searchBar?.resignFirstResponder()
         switch locationManager.authorizationStatus {
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
@@ -106,9 +121,10 @@ extension ForecastViewController: UISearchBarDelegate {
             
             if error != nil {
                 UIAlertController.controller(with: NSLocalizedString("Error", comment: ""),
-                                             and: NSLocalizedString("There was n error fetching results.\n\nPlease change your search criteria and try again.", comment: ""),
+                                             and: NSLocalizedString("There was an error fetching results.\n\nPlease change your search criteria and try again.", comment: ""),
                                              on: self)
             } else if let firstItem = response?.mapItems.first {
+                searchBar.resignFirstResponder()
                 searchBar.text = firstItem.name
                 let location = CLLocation(latitude: firstItem.placemark.coordinate.latitude,
                                           longitude: firstItem.placemark.coordinate.longitude)

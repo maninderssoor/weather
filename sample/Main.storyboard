@@ -48,7 +48,8 @@
                             </collectionView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="PrF-rH-SMz">
                                 <rect key="frame" x="0.0" y="88" width="414" height="51"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <color key="barTintColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits" textContentType="location"/>
                                 <connections>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="KQ0-OX-meF"/>
                                 </connections>
