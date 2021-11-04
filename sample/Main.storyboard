@@ -77,6 +77,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="bPQ-vh-q2b" id="8ch-xT-mXJ"/>
+                        <outlet property="collectionViewBottomConstraint" destination="k3H-zR-9Iy" id="gsS-Gy-ywh"/>
                         <outlet property="searchBar" destination="PrF-rH-SMz" id="IpU-5J-9jd"/>
                     </connections>
                 </viewController>

@@ -47,6 +47,7 @@ class ForecastViewController: UIViewController {
     }()
     
     @IBOutlet weak var collectionView: UICollectionView?
+    @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint?
     @IBOutlet weak var searchBar: UISearchBar?
     
     init(viewModel: ForecastViewModel) {
@@ -66,6 +67,15 @@ class ForecastViewController: UIViewController {
         setupSearchBar()
         
         viewModel.view = self
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardFrameChanged(notification:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide(notification:)),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -158,6 +168,22 @@ extension ForecastViewController: CLLocationManagerDelegate {
                                      on: self)
         locationManager.stopUpdatingLocation()
     }
+}
+
+extension ForecastViewController {
+
+    @objc private func keyboardFrameChanged(notification: NSNotification) {
+        guard let keyboardFrameEnd = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+
+        collectionViewBottomConstraint?.constant = keyboardFrameEnd.cgRectValue.height
+        view.layoutIfNeeded()
+    }
+
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        collectionViewBottomConstraint?.constant = .zero
+        view.layoutIfNeeded()
+    }
+
 }
 
 extension ForecastViewController: ForecastView {
