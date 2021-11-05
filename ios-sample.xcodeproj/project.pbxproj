@@ -22,6 +22,8 @@
 		008B24622733CFB4008E875C /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008B24612733CFB4008E875C /* UIImageView+Download.swift */; };
 		008B30F127347FE7008E875C /* ForecastAPIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EB1D34272C972000E84237 /* ForecastAPIServiceTests.swift */; };
 		008B30F22734808B008E875C /* VenueListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EB1D36272C9A4D00E84237 /* VenueListViewModel.swift */; };
+		0099AB062735C95C00E7BA57 /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0099AB052735C95C00E7BA57 /* MapViewController.storyboard */; };
+		0099AB082735C99000E7BA57 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0099AB072735C99000E7BA57 /* MapViewController.swift */; };
 		00E9197C27329D4700CA292B /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00868AA42715D558006B873B /* ForecastViewModel.swift */; };
 		00E9197D27329D9D00CA292B /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00868AA62715D558006B873B /* ForecastViewController.swift */; };
 		00E9197F27329EF900CA292B /* ForecastDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E9197E27329EF900CA292B /* ForecastDay.swift */; };
@@ -75,6 +77,8 @@
 		00898D40272EFE3B002E4391 /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
 		00898D42272EFE3B002E4391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		008B24612733CFB4008E875C /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
+		0099AB052735C95C00E7BA57 /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
+		0099AB072735C99000E7BA57 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		00E9197E27329EF900CA292B /* ForecastDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDay.swift; sourceTree = "<group>"; };
 		00E9198027329FCD00CA292B /* ForecastDay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastDay.xib; sourceTree = "<group>"; };
 		00EB15B5272C2F3000E84237 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -137,6 +141,7 @@
 				00EB1D31272C963200E84237 /* API */,
 				00868AA12715D558006B873B /* Layout */,
 				00868AA72715D558006B873B /* Main.storyboard */,
+				0099AB052735C95C00E7BA57 /* MapViewController.storyboard */,
 				00868AAC2715D558006B873B /* Models */,
 				00868A9C2715D557006B873B /* Resources */,
 				00868AA52715D558006B873B /* View Controllers */,
@@ -177,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				00868AA62715D558006B873B /* ForecastViewController.swift */,
+				0099AB072735C99000E7BA57 /* MapViewController.swift */,
 				00EB1D2B272C8CB600E84237 /* ErrorAlert.swift */,
 			);
 			path = "View Controllers";
@@ -361,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0099AB062735C95C00E7BA57 /* MapViewController.storyboard in Resources */,
 				00868ABB2715D558006B873B /* ForecastCell.xib in Resources */,
 				00E9198127329FCD00CA292B /* ForecastDay.xib in Resources */,
 				00868AB82715D558006B873B /* Main.storyboard in Resources */,
@@ -400,6 +407,7 @@
 				00868AB02715D558006B873B /* AppDelegate.swift in Sources */,
 				00EB1D2E272C94E000E84237 /* ForecastAPIService.swift in Sources */,
 				00868ABA2715D558006B873B /* ForecastCell.swift in Sources */,
+				0099AB082735C99000E7BA57 /* MapViewController.swift in Sources */,
 				00EB1D2C272C8CB600E84237 /* ErrorAlert.swift in Sources */,
 				00E9197D27329D9D00CA292B /* ForecastViewController.swift in Sources */,
 				00E9197F27329EF900CA292B /* ForecastDay.swift in Sources */,

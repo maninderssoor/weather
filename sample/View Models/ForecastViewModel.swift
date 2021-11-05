@@ -26,6 +26,8 @@ class ForecastViewModel {
     
     weak var view: ForecastView?
     
+    var lastFetchedLocation: CLLocation?
+    
     init(provider: APIProvider = URLSession.shared) {
         self.apiProvider = provider
     }
@@ -86,6 +88,7 @@ class ForecastViewModel {
                 
                 DispatchQueue.main.async {[weak self] in
                     self?.isFetching = false
+                    self?.lastFetchedLocation = location
                     self?.view?.didFetchData(with: snapshot)
                 }
             })

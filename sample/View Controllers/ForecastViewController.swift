@@ -49,6 +49,8 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView?
     @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint?
     @IBOutlet weak var searchBar: UISearchBar?
+    @IBOutlet weak var mapButton: UIButton?
+    @IBOutlet weak var mapButtonWidthConstraint: NSLayoutConstraint?
     
     init(viewModel: ForecastViewModel) {
         self.viewModel = viewModel
@@ -65,6 +67,7 @@ class ForecastViewController: UIViewController {
         
         setupCollectionView()
         setupSearchBar()
+        setupNavigationController()
         
         viewModel.view = self
         
@@ -102,7 +105,18 @@ extension ForecastViewController {
         searchBar?.barTintColor = .white
         searchBar?.searchTextField.leftView?.tintColor = .lightGray
         searchBar?.searchTextField.backgroundColor = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.00)
-        searchBar?.searchTextField.textColor = .tertiarySystemBackground
+        searchBar?.searchTextField.textColor = .black
+    }
+    
+    private func setupNavigationController() {
+        guard let chevronBack = UIImage(systemName: "chevron.left") else { return }
+        navigationController?.navigationBar.backIndicatorImage = UIImage()
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage()
+        navigationItem.backBarButtonItem = UIBarButtonItem(image: chevronBack,
+                                                           style: .plain,
+                                                           target: nil,
+                                                           action: nil)
+        navigationItem.backBarButtonItem?.tintColor = .black
     }
     
     @IBAction func loadData() {
@@ -117,6 +131,12 @@ extension ForecastViewController {
         default:
             locationManager.startUpdatingLocation()
         }
+    }
+    
+    @IBAction func showMap() {
+        guard let viewController = UIStoryboard(name: MapViewController.storyboard, bundle: nil).instantiateInitialViewController() as? MapViewController else { return }
+        viewController.location = viewModel.lastFetchedLocation
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
@@ -188,7 +208,12 @@ extension ForecastViewController {
 
 extension ForecastViewController: ForecastView {
     func didFetchData(with snapshot: NSDiffableDataSourceSnapshot<ForecastSection, AnyHashable>) {
-        self.datasource?.apply(snapshot, animatingDifferences: true, completion: nil)
+        datasource?.apply(snapshot, animatingDifferences: true, completion: nil)
+        
+        UIView.animate(withDuration: 0.3) {[ weak self] in
+            self?.mapButtonWidthConstraint?.constant = 51.0
+            self?.view.layoutIfNeeded()
+        }
     }
     
     func didFailFetch(with error: ForecastError) {

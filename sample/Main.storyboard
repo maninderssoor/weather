@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xu4-I5-FBV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xu4-I5-FBV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -54,17 +56,36 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="KQ0-OX-meF"/>
                                 </connections>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfI-db-lY7">
+                                <rect key="frame" x="414" y="88" width="0.0" height="51"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" id="4lI-SQ-S49"/>
+                                    <constraint firstAttribute="height" constant="51" id="Fhj-76-Ol3"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=" ">
+                                    <imageReference key="image" image="mappin.circle.fill" catalog="system" symbolScale="large"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="showMap" destination="Y6W-OH-hqX" eventType="touchUpInside" id="k3S-c2-Ho9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bPQ-vh-q2b" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="1ag-dP-zh2"/>
-                            <constraint firstAttribute="trailing" secondItem="PrF-rH-SMz" secondAttribute="trailing" id="Jyd-yZ-bOr"/>
+                            <constraint firstItem="qfI-db-lY7" firstAttribute="bottom" secondItem="PrF-rH-SMz" secondAttribute="bottom" id="TaS-4l-cBf"/>
+                            <constraint firstAttribute="trailing" secondItem="qfI-db-lY7" secondAttribute="trailing" id="VXc-8u-GEG"/>
+                            <constraint firstItem="qfI-db-lY7" firstAttribute="top" secondItem="PrF-rH-SMz" secondAttribute="top" id="a4a-eC-E2v"/>
                             <constraint firstItem="bPQ-vh-q2b" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="jiV-Zs-jHP"/>
                             <constraint firstAttribute="bottom" secondItem="bPQ-vh-q2b" secondAttribute="bottom" id="k3H-zR-9Iy"/>
                             <constraint firstItem="PrF-rH-SMz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="lyy-1u-EOQ"/>
                             <constraint firstItem="bPQ-vh-q2b" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="mkC-tS-5OW"/>
                             <constraint firstItem="PrF-rH-SMz" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="u4g-LA-VVw"/>
+                            <constraint firstItem="qfI-db-lY7" firstAttribute="leading" secondItem="PrF-rH-SMz" secondAttribute="trailing" id="v2Z-mg-oDc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Weather" id="aXL-Ee-8LL">
@@ -78,6 +99,8 @@
                     <connections>
                         <outlet property="collectionView" destination="bPQ-vh-q2b" id="8ch-xT-mXJ"/>
                         <outlet property="collectionViewBottomConstraint" destination="k3H-zR-9Iy" id="gsS-Gy-ywh"/>
+                        <outlet property="mapButton" destination="qfI-db-lY7" id="Eo6-ti-fpd"/>
+                        <outlet property="mapButtonWidthConstraint" destination="4lI-SQ-S49" id="nkn-DW-QGx"/>
                         <outlet property="searchBar" destination="PrF-rH-SMz" id="IpU-5J-9jd"/>
                     </connections>
                 </viewController>
@@ -88,5 +111,6 @@
     </scenes>
     <resources>
         <image name="location.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="mappin.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>
