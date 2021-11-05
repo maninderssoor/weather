@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0011BDED2735DD96006BBE40 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011BDEC2735DD96006BBE40 /* NavigationController.swift */; };
 		001200E3272C0127003C26D4 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001200E2272C0127003C26D4 /* Tests.swift */; };
 		001200EF272C0191003C26D4 /* jsonResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 001200EE272C0191003C26D4 /* jsonResponse.json */; };
 		001200F1272C01A7003C26D4 /* DecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001200F0272C01A7003C26D4 /* DecodingTests.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0011BDEC2735DD96006BBE40 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		001200E0272C0127003C26D4 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		001200E2272C0127003C26D4 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		001200E4272C0127003C26D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				00868AA62715D558006B873B /* ForecastViewController.swift */,
+				0011BDEC2735DD96006BBE40 /* NavigationController.swift */,
 				0099AB072735C99000E7BA57 /* MapViewController.swift */,
 				00EB1D2B272C8CB600E84237 /* ErrorAlert.swift */,
 			);
@@ -406,6 +409,7 @@
 				00868AB52715D558006B873B /* ForecastLayoutManager.swift in Sources */,
 				00868AB02715D558006B873B /* AppDelegate.swift in Sources */,
 				00EB1D2E272C94E000E84237 /* ForecastAPIService.swift in Sources */,
+				0011BDED2735DD96006BBE40 /* NavigationController.swift in Sources */,
 				00868ABA2715D558006B873B /* ForecastCell.swift in Sources */,
 				0099AB082735C99000E7BA57 /* MapViewController.swift in Sources */,
 				00EB1D2C272C8CB600E84237 /* ErrorAlert.swift in Sources */,
