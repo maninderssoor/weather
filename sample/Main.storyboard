@@ -58,12 +58,13 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfI-db-lY7">
                                 <rect key="frame" x="414" y="88" width="0.0" height="51"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="mapButton"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="4lI-SQ-S49"/>
                                     <constraint firstAttribute="height" constant="51" id="Fhj-76-Ol3"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button">
+                                <state key="normal">
                                     <imageReference key="image" image="mappin.circle.fill" catalog="system" symbolScale="large"/>
                                 </state>
                                 <connections>

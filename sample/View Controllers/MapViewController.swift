@@ -11,6 +11,12 @@ class MapViewController: UIViewController {
     
     var location: CLLocation?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.accessibilityIdentifier = "mapViewController"
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         

@@ -8,15 +8,10 @@ class UITests: XCTestCase {
     func test_dataLoaded() {
         application.launch()
         
-        addUIInterruptionMonitor(withDescription: "Location") { alert -> Bool in
-            alert.buttons["Allow While Using App"].tap()
-            return true
-        }
-        application.tap()
-        
-        let searchButton = application.buttons["search"].firstMatch
+        let searchButton = application.searchFields.firstMatch
         XCTAssertTrue(searchButton.waitForExistence(timeout: timeout))
-        searchButton.tap()
+        searchButton.typeText("London")
+        searchButton.typeText("\n")
         
         let collectionView = application.collectionViews["collectionView"].firstMatch
         XCTAssertTrue(collectionView.waitForExistence(timeout: timeout))
@@ -24,5 +19,12 @@ class UITests: XCTestCase {
         let numberOfVisibleCellsPerRow = 2 + 1
         let fourDays = numberOfVisibleCellsPerRow * 4 // then add one for at least a day cell on the 5th day forecast
         XCTAssertGreaterThanOrEqual(collectionView.cells.count, fourDays + 1)
+        
+        let mapsButton = application.buttons["mapButton"].firstMatch
+        XCTAssertTrue(mapsButton.waitForExistence(timeout: timeout))
+        mapsButton.tap()
+        
+        let mapView = application.otherElements["mapViewController"].firstMatch
+        XCTAssertTrue(mapView.waitForExistence(timeout: timeout))
     }
 }

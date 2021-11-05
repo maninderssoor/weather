@@ -22,7 +22,7 @@
 		00898D41272EFE3B002E4391 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00898D40272EFE3B002E4391 /* UITests.swift */; };
 		008B24622733CFB4008E875C /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008B24612733CFB4008E875C /* UIImageView+Download.swift */; };
 		008B30F127347FE7008E875C /* ForecastAPIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EB1D34272C972000E84237 /* ForecastAPIServiceTests.swift */; };
-		008B30F22734808B008E875C /* VenueListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EB1D36272C9A4D00E84237 /* VenueListViewModel.swift */; };
+		008B30F22734808B008E875C /* ForecastViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EB1D36272C9A4D00E84237 /* ForecastViewModelTests.swift */; };
 		0099AB062735C95C00E7BA57 /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0099AB052735C95C00E7BA57 /* MapViewController.storyboard */; };
 		0099AB082735C99000E7BA57 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0099AB072735C99000E7BA57 /* MapViewController.swift */; };
 		00E9197C27329D4700CA292B /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00868AA42715D558006B873B /* ForecastViewModel.swift */; };
@@ -88,7 +88,7 @@
 		00EB1D2D272C94DF00E84237 /* ForecastAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastAPIService.swift; sourceTree = "<group>"; };
 		00EB1D32272C965A00E84237 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		00EB1D34272C972000E84237 /* ForecastAPIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastAPIServiceTests.swift; sourceTree = "<group>"; };
-		00EB1D36272C9A4D00E84237 /* VenueListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListViewModel.swift; sourceTree = "<group>"; };
+		00EB1D36272C9A4D00E84237 /* ForecastViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModelTests.swift; sourceTree = "<group>"; };
 		00EB1D38272CA06F00E84237 /* jsonBadResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jsonBadResponse.json; sourceTree = "<group>"; };
 		00EB1D3C272CA14200E84237 /* APIProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProviderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,7 +126,7 @@
 				00EB1D3C272CA14200E84237 /* APIProviderTests.swift */,
 				001200F0272C01A7003C26D4 /* DecodingTests.swift */,
 				00EB1D34272C972000E84237 /* ForecastAPIServiceTests.swift */,
-				00EB1D36272C9A4D00E84237 /* VenueListViewModel.swift */,
+				00EB1D36272C9A4D00E84237 /* ForecastViewModelTests.swift */,
 				001200EE272C0191003C26D4 /* jsonResponse.json */,
 				00EB1D38272CA06F00E84237 /* jsonBadResponse.json */,
 				001200E4272C0127003C26D4 /* Info.plist */,
@@ -394,7 +394,7 @@
 			files = (
 				001200F1272C01A7003C26D4 /* DecodingTests.swift in Sources */,
 				00EB1D3D272CA14200E84237 /* APIProviderTests.swift in Sources */,
-				008B30F22734808B008E875C /* VenueListViewModel.swift in Sources */,
+				008B30F22734808B008E875C /* ForecastViewModelTests.swift in Sources */,
 				008B30F127347FE7008E875C /* ForecastAPIServiceTests.swift in Sources */,
 				001200E3272C0127003C26D4 /* Tests.swift in Sources */,
 			);
